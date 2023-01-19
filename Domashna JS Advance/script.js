@@ -1,16 +1,35 @@
-let movie = ['Posle dozdot', 'Sam doma', 'Brzi i besni', 'Grofot od Monte Kristo', 'Memoarite na edna gejsha'];
-let form = document.querySelector('form');
-let button = document.querySelector('#btn');
-let result = document.createElement('h1');
-let text = document.getElementById('movies');
+let movieArray = ['Posle dozdot', 'Sam doma', 'Brzi i besni', 'Memoarite na edna gejsha'];
+let inputMovie = document.getElementById('inputMovie')
+let buttonInput = document.getElementById('btn')
+let displayInput = document.getElementById('displayInput')
 
-btn.addEventListener('click', function(event) {
- for (let i = 0; i < movie.length; i++){
-  if(text === movie.length){
-   console.log(h1.innerText('The movie can be rented'))
-  } else {
-   console.log(h1.innerText ("The movie can't be rented") )
+function compareStrings(inputString, arrayString){
+  if (inputString.toLowerCase() === arrayString.toLowerCase()){
+      return true;
+  } else{
+    return false;
+  }}
+
+  inputButton.addEventListener('click', function() {
+  let list = 0;
+  displayInput.innerHTML = ''
+
+  for(let movie of movieArray){
+    if(compareStrings(inputMovie.value,movie)){
+      list = 1;
+    }
   }
-  }console.log(event)
+  if(list === 1){
+    let newHeader = document.createElement('h1')
+    newHeader.innerText = 'The movie can be rented'
+    newHeader.style.color = "green"
+    displayInput.appendChild(newHeader)
+  }
+  else if (list === 0){
+    let newHeader = document.createElement('h1')
+    newHeader.innerText = "The movie can't be rented"
+    newHeader.style.color = "red"
+    displayInput.appendChild(newHeader)
+  }
+  inputMovie.value = ''
 })
-btn.addEventListener('click', () => {console.log(result) })
