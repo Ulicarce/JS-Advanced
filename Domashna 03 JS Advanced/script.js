@@ -19,12 +19,11 @@ let changeColor = document.getElementById('color')
 let chanegeSize = document.getElementById('size')
 let btn = document.getElementById('btn')
 
-btn.addEventListener('click',function(){
- changeText.style.color = color.value;
- changeText.style.fontSize = size.value + 'px'
-})
+// btn.addEventListener('click',function(){
+//  changeText.style.color = color.value;
+//  changeText.style.fontSize = size.value + 'px'
+// })
 
-// btn.addEventListener('click' () => 
-// { return changeText.style.color = color.value; 
-//  changeText.style.fontSize = size.value + 'px'}
-// ) ne znam ova ne mi funkcionira a ne znam kade mi e greskata
+btn.addEventListener('click', () => 
+{ changeText.style.color = color.value; 
+ changeText.style.fontSize = size.value + 'px'})
