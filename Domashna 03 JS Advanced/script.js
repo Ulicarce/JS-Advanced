@@ -24,6 +24,17 @@ let btn = document.getElementById('btn')
 //  changeText.style.fontSize = size.value + 'px'
 // })
 
-btn.addEventListener('click', () => 
-{ changeText.style.color = color.value; 
- changeText.style.fontSize = size.value + 'px'})
+// btn.addEventListener('click', () => 
+// { changeText.style.color = color.value; 
+//  changeText.style.fontSize = size.value + 'px'})
+
+let changeTextColor = (element, color) => color.value === '' ? element.style.color = 'black' : element.style.color = color.value
+let changeTextSize = (element, size) => size.value === '' ? element.style.fontSize = '24px' : element.style.fontSize = size.value + 'px'
+
+
+btn.addEventListener('click', () => {
+ changeTextColor(changeText, changeColor)
+ changeTextSize(changeText, chanegeSize)
+ changeColor.value = ''
+ chanegeSize.value = ''
+})
