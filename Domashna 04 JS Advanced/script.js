@@ -9,9 +9,11 @@ let nextBtn = document.createElement('btn');
 let previousBtn = document.createElement('btn');
 let nextPage;
 let previousPage;
+document.getElementById('table').style.display = "none"
 
 // povrzuvanje so api pri klik na kopceto
 PlanetButton.addEventListener('click', () => {
+ document.getElementById('table').style.display = "block"
  getData('https://swapi.dev/api/planets/?page=1')
  showNextBtn()
 }) 
